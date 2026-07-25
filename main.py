@@ -5,6 +5,10 @@ load_dotenv()
 from agent import faq_agent, SearchDeps
 from ingest import build_index, load_faq_data
 
+import logfire
+
+logfire.configure()
+logfire.instrument_pydantic_ai()
 
 def main():
     # Download the FAQ and build the search index
@@ -16,7 +20,7 @@ def main():
 
     # Ask a question. run_sync blocks until the agent is done;
     # the agent may call search multiple times before answering.
-    question = 'I just discovered the course. Can I join it?'
+    question = 'is it possible to get a certificate ? '
     result = faq_agent.run_sync(question, deps=deps)
 
     print(result.output)

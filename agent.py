@@ -4,6 +4,9 @@ from minsearch import Index
 from pydantic_ai import Agent, RunContext
 
 
+
+
+
 # --------------------------------------------------------------------------- #
 # Instructions
 # --------------------------------------------------------------------------- #
@@ -60,7 +63,8 @@ class SearchDeps:
 #   - tools are registered with @faq_agent.tool (no manual JSON schema)
 #   - the loop is built into run_sync() — we call it and get the answer back
 faq_agent = Agent(
-    'llama-3.3-70b-versatile',
+    "groq:llama-3.3-70b-versatile",
+    # 'openai:llama-3.3-70b-versatile',
     deps_type=SearchDeps,
     instructions=INSTRUCTIONS,
 )

@@ -9,6 +9,8 @@ dependencies = [
     "minsearch>=0.2.0",
     "openai>=2.48.0",
     "pydantic-ai>=2.18.0",
+    "pydantic-ai-slim[groq]>=2.18.0",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
+    
 ]
